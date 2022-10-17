@@ -8,7 +8,7 @@ const AppFooter = () => (
     <span role="img" aria-label="love">
       ❤️
     </span>{" "}
-    in Greece.  </Footer>
+    in Greece. </Footer>
 );
 
 export default AppFooter;
