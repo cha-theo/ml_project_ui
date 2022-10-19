@@ -34,7 +34,7 @@ const Stats = () => {
   }, []);
 
   return (
-    <div>
+    <div className="stats_page">
       <Title>Stats page</Title>
       <Divider />
       {statsData ? (

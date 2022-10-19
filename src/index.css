@@ -23,9 +23,12 @@ body {
   background: #fff;
   padding: 24px;
   margin: 0 auto;
-  min-width: 1204px;
+  /* min-width: 1204px; */
 }
 
+.stats_page{
+  min-width: 1204px;
+}
 .align-center {
   text-align: center;
 }

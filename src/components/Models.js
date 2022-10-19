@@ -57,6 +57,7 @@ const Models = () => {
   };
 
   return (
+    <div className="stats_page">
     <Card>
       <Title>Models form</Title>
       <form>
@@ -142,6 +143,7 @@ const Models = () => {
         </div>
       )}
     </Card>
+    </div>
   );
 };
 
