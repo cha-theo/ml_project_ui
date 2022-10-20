@@ -4,7 +4,7 @@ import {
   Avatar,
   Card,
   Col,
-  
+  List
 } from "antd";
 import {
   FacebookOutlined,
@@ -119,11 +119,16 @@ const TeamMembers = () => (
       </Card>
     </Col>
 
+
+
+    
+
     {/* <List
       size="large"
       bordered
       dataSource={team}
       renderItem={({ name, image, description }) => (
+        
         <List.Item>
           <List.Item.Meta
             avatar={<Avatar size={45} src={image} />}
@@ -133,6 +138,9 @@ const TeamMembers = () => (
         </List.Item>
       )}
     /> */}
+
+
+
   </>
 );
 
