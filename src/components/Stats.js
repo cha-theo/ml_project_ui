@@ -17,12 +17,15 @@ import {
   Pie,
   Cell,
 } from "recharts";
-import { getStats } from "../api/api";
+import { getStats, getTestStats } from "../api/api";
 import test_data from "../data/test_bar_data";
 
 console.log(test_data)
 const { Title } = Typography;
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
+
+
+
 
 const Stats = () => {
   const [statsData, setStatsData] = useState(null);
@@ -121,7 +124,7 @@ const Stats = () => {
           <Row className="row" gutter={[24, 24]}>
             <Col sm={{ span: 24 }} lg={{ span: 12 }}>
               <div className="chart-container">
-                <Title level={4}>My super bar chart</Title>
+                <Title level={4}>Mean/Max price per room type</Title>
                 <div className="chart-inner">
                   <ResponsiveContainer>
                     <BarChart
@@ -138,8 +141,8 @@ const Stats = () => {
                       <YAxis />
                       <Tooltip />
                       <Legend />
-                      <Bar dataKey="pv" fill="#8884d8" />
-                      <Bar dataKey="uv" fill="#82ca9d" />
+                      <Bar dataKey="Mean price" fill="#8884d8" />
+                      <Bar dataKey="Max price" fill="#82ca9d" />
                     </BarChart>
                   </ResponsiveContainer>
                 </div>

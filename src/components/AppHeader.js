@@ -12,6 +12,10 @@ const menuItems = [
     key: "stats",
     label: <Link to="/stats">Stats</Link>,
   },
+  {
+    key: "raw-data",
+    label: <Link to="http://127.0.0.1:5001/emp/api/v1/stats/raw_data" target="_blank">Raw Data</Link>,
+  }
 ];
 
 const AppHeader = () => {

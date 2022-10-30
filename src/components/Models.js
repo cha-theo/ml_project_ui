@@ -63,7 +63,7 @@ const Models = () => {
       <form>
         <Form.Item label="Text Field">
           <Input
-            placeholder="placeholder"
+            placeholder="Only number for testing purposes"
             name="textField"
             value={formValues.textField}
             onChange={handleInputChange}
