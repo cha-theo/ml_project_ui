@@ -16,16 +16,20 @@ import {
   PieChart,
   Pie,
   Cell,
+  Radar,
+  RadarChart,
+  PolarGrid,
+  PolarAngleAxis,
+  PolarRadiusAxis,
+  RadialBarChart,
+  RadialBar,
 } from "recharts";
 import { getStats, getTestStats } from "../api/api";
 import test_data from "../data/test_bar_data";
 
-console.log(test_data)
+console.log(test_data);
 const { Title } = Typography;
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
-
-
-
 
 const Stats = () => {
   const [statsData, setStatsData] = useState(null);
@@ -36,13 +40,20 @@ const Stats = () => {
     });
   }, []);
 
+  const style = {
+    top: '50%',
+    right: 0,
+    transform: 'translate(0, -50%)',
+    lineHeight: '24px',
+  };
+
   return (
     <div className="stats_page">
       <Title>Stats page</Title>
       <Divider />
       {statsData ? (
         <>
-          <Row className="row" gutter={[24, 24]}>
+          {/* <Row className="row" gutter={[24, 24]}>
             <Col style={{ width: "100%" }}>
               <div className="chart-container">
                 <Title level={4}>My super line chart</Title>
@@ -120,7 +131,7 @@ const Stats = () => {
                 </div>
               </div>
             </Col>
-          </Row>
+          </Row> */}
           <Row className="row" gutter={[24, 24]}>
             <Col sm={{ span: 24 }} lg={{ span: 12 }}>
               <div className="chart-container">
@@ -141,14 +152,99 @@ const Stats = () => {
                       <YAxis />
                       <Tooltip />
                       <Legend />
-                      <Bar dataKey="Mean price" fill="#8884d8" />
-                      <Bar dataKey="Max price" fill="#82ca9d" />
+                      <Bar dataKey="mean price" fill="#8884d8" />
+                      <Bar dataKey="max price" fill="#82ca9d" />
                     </BarChart>
                   </ResponsiveContainer>
                 </div>
               </div>
             </Col>
+
             <Col sm={{ span: 24 }} lg={{ span: 12 }}>
+              <div className="chart-container">
+                <Title level={4}>My super pie chart</Title>
+                <div className="chart-inner">
+                  <ResponsiveContainer>
+                    <RadarChart
+                      cx="50%"
+                      cy="50%"
+                      outerRadius="80%"
+                      data={statsData.radarChart}
+                    >
+                      <PolarGrid />
+                      <PolarAngleAxis dataKey="name" />
+                      <PolarRadiusAxis />
+                      <Radar
+                        name="Mike"
+                        dataKey="frequency"
+                        stroke="#8884d8"
+                        fill="#8884d8"
+                        fillOpacity={0.6}
+                      />
+                    </RadarChart>
+                  </ResponsiveContainer>
+                </div>
+              </div>
+            </Col>
+          </Row>
+
+          <Row className="row" gutter={[24, 24]}>
+            <Col sm={{ span: 24 }} lg={{ span: 12 }}>
+              <div className="chart-container">
+                <Title level={4}>Mean/Max price per room type</Title>
+                <div className="chart-inner">
+                  <ResponsiveContainer>
+                    <RadialBarChart
+                      cx="50%"
+                      cy="50%"
+                      innerRadius="10%"
+                      outerRadius="80%"
+                      barSize={20}
+                      data={statsData.radialBarChart}
+                    >
+                      <RadialBar
+                        minAngle={15}
+                        label={{ position: "insideStart", fill: "#000" }}
+                        background
+                        clockWise
+                        dataKey="uv"
+                      />
+                      <Legend
+                        iconSize={10}
+                        layout="vertical"
+                        verticalAlign="middle"
+                        wrapperStyle={style}
+                      />
+                    </RadialBarChart>
+                  </ResponsiveContainer>
+                </div>
+              </div>
+            </Col>
+                  To fill 
+            <Col sm={{ span: 24 }} lg={{ span: 12 }}></Col>
+          </Row>
+          {/* <PieChart>
+                      <Pie
+                        data={statsData.pieChart}
+                        dataKey="value"
+                        outerRadius={100}
+                        label
+                      >
+                        {statsData.pieChart.map((entry, index) => (
+                          <Cell
+                            key={`cell-${entry.name}`}
+                            fill={COLORS[index % COLORS.length]}
+                          />
+                        ))}
+                      </Pie>
+                    </PieChart> 
+                  </ResponsiveContainer>
+                </div>
+              </div>
+            </Col>
+            */}
+
+          {/* <Col sm={{ span: 24 }} lg={{ span: 12 }}>
               <div className="chart-container">
                 <Title level={4}>My super pie chart</Title>
                 <div className="chart-inner">
@@ -171,12 +267,10 @@ const Stats = () => {
                   </ResponsiveContainer>
                 </div>
               </div>
-            </Col>
+            </Col> 
           </Row>
-
-
-
-          <Row className="row" gutter={[24, 24]}>
+          */}
+          {/* <Row className="row" gutter={[24, 24]}>
             <Col style={{ width: "100%" }}>
               <div className="chart-container">
                 <Title level={4}>My test bar chart</Title>
@@ -203,7 +297,7 @@ const Stats = () => {
                 </div>
               </div>
             </Col>
-          </Row>
+          </Row> */}
         </>
       ) : (
         <div className="stats-loader">

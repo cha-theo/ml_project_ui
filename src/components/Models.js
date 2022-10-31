@@ -73,6 +73,10 @@ const Models = () => {
     <Card>
       <Title>Models form</Title>
       <form>
+
+
+
+
       <Form.Item label="How many persons can stay?">
           <Input
             placeholder="Insert the number of persons"

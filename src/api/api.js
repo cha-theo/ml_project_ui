@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const makeModelsPost = async (postData) => {
-  const res = await axios.post("http://127.0.0.1:5001/emp/api/v1/models/", postData);
+  const res = await axios.post("http://127.0.0.1:5001/bnb/api/v1/models/", postData);
   const data = await res.data;
 
   return data;
@@ -9,7 +9,7 @@ export const makeModelsPost = async (postData) => {
 //change url with local host
 //main url: https://api.npoint.io/6bf081bc157c1d05e44a
 export const getStats = async () => {
-  const res = await axios("http://127.0.0.1:5001/emp/api/v1/stats/max_id");
+  const res = await axios("http://127.0.0.1:5001/bnb/api/v1/stats/max_id");
   const data = await res.data;
 
   return data;
@@ -18,7 +18,7 @@ export const getStats = async () => {
 
 // test connection
 export const getTestStats = async () => {
-  const res = await axios("http://127.0.0.1:5001/emp/api/v1/stats/max_id");
+  const res = await axios("http://127.0.0.1:5001/bnb/api/v1/stats/max_id");
   const data = await res.data;
 
   return data;

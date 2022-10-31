@@ -1,29 +1,23 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default [
     {
-        name: "Page A",
-        uv: 4000,
-        pv: 1400
+    fill: "#8884d8",
+    name: "Shared room",
+    uv: 0.8
     },
     {
-        name: "Page A",
-        uv: 8000,
-        pv: 5400
+    fill: "#83a6ed",
+    name: "Hotel room",
+    uv: 1.38
     },
     {
-        name: "Page A",
-        uv: 6000,
-        pv: 2600
+    fill: "#8dd1e1",
+    name: "Private room",
+    uv: 9.1
     },
     {
-        name: "Page A",
-        uv: 4650,
-        pv: 3400
-    },
-    {
-        name: "Page A",
-        uv: 4300,
-        pv: 2455
-    },
-  ];
-  
+    fill: "#a4de6c",
+    name: "Entire home/apt",
+    uv: 88.72
+    }
+    ];
