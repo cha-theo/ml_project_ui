@@ -16,12 +16,24 @@ const { Title } = Typography;
 const { Option } = Select;
 
 const formValuesInitialState = {
-  textField: "",
-  textField2: "",
-  selectField: "",
-  multiplSelectField: [],
-  radioField: "",
-  switchField: false,
+  accommodates: "",
+  beds: "",
+  smoke_alarm: "",
+  oven: "",
+  patio_balcony: "",
+  fire_extinguisher: "",
+  shower_gel: "",
+  // textField: "",
+  // textField2: "",
+  // textField3: "",
+  // textField4: "",
+  // textField5: "",
+  // textField6: "",
+  // textField7: "",
+  // selectField: "",
+  // multiplSelectField: [],
+  // radioField: "",
+  // switchField: false,
 };
 
 const Models = () => {
@@ -61,6 +73,82 @@ const Models = () => {
     <Card>
       <Title>Models form</Title>
       <form>
+      <Form.Item label="How many persons can stay?">
+          <Input
+            placeholder="Insert the number of persons"
+            name="accommodates"
+            value={formValues.accommodates}
+            onChange={handleInputChange}
+          />
+        </Form.Item>
+
+        <Form.Item label="How many beds are there?">
+          <Input
+            placeholder="Insert the number of beds"
+            name="beds"
+            value={formValues.beds}
+            onChange={handleInputChange}
+          />
+        </Form.Item>
+
+        <Form.Item label="Is there smoke alarm?">
+          <Radio.Group
+            name="smoke_alarm"
+            onChange={handleInputChange}
+            value={formValues.smoke_alarm}
+          >
+            <Radio value="1">Yes</Radio>
+            <Radio value="0">No</Radio>
+          </Radio.Group>
+        </Form.Item>
+
+        <Form.Item label="Is there oven?">
+          <Radio.Group
+            name="oven"
+            onChange={handleInputChange}
+            value={formValues.oven}
+          >
+            <Radio value="1">Yes</Radio>
+            <Radio value="0">No</Radio>
+          </Radio.Group>
+        </Form.Item>
+
+        <Form.Item label="Is there patio balcony?">
+          <Radio.Group
+            name="patio_balcony"
+            onChange={handleInputChange}
+            value={formValues.patio_balcony}
+          >
+            <Radio value="1">Yes</Radio>
+            <Radio value="0">No</Radio>
+          </Radio.Group>
+        </Form.Item>
+
+        <Form.Item label="Is there fire extinguisher?">
+          <Radio.Group
+            name="fire_extinguisher"
+            onChange={handleInputChange}
+            value={formValues.fire_extinguisher}
+          >
+            <Radio value="1">Yes</Radio>
+            <Radio value="0">No</Radio>
+          </Radio.Group>
+        </Form.Item>
+
+        <Form.Item label="Is there shower gel?">
+          <Radio.Group
+            name="shower_gel"
+            onChange={handleInputChange}
+            value={formValues.shower_gel}
+          >
+            <Radio value="1">Yes</Radio>
+            <Radio value="0">No</Radio>
+          </Radio.Group>
+        </Form.Item>
+
+
+
+{/* 
         <Form.Item label="Text Field">
           <Input
             placeholder="Only number for testing purposes"
@@ -74,6 +162,46 @@ const Models = () => {
             placeholder="placeholder"
             name="textField2"
             value={formValues.textField2}
+            onChange={handleInputChange}
+          />
+        </Form.Item>
+        <Form.Item label="Text Field 3">
+          <Input
+            placeholder="placeholder"
+            name="textField3"
+            value={formValues.textField3}
+            onChange={handleInputChange}
+          />
+        </Form.Item>
+        <Form.Item label="Text Field 4">
+          <Input
+            placeholder="placeholder"
+            name="textField4"
+            value={formValues.textField4}
+            onChange={handleInputChange}
+          />
+        </Form.Item>
+        <Form.Item label="Text Field 5">
+          <Input
+            placeholder="placeholder"
+            name="textField5"
+            value={formValues.textField5}
+            onChange={handleInputChange}
+          />
+        </Form.Item>
+        <Form.Item label="Text Field 6">
+          <Input
+            placeholder="placeholder"
+            name="textField6"
+            value={formValues.textField6}
+            onChange={handleInputChange}
+          />
+        </Form.Item>
+        <Form.Item label="Text Field 7">
+          <Input
+            placeholder="placeholder"
+            name="textField7"
+            value={formValues.textField7}
             onChange={handleInputChange}
           />
         </Form.Item>
@@ -122,7 +250,7 @@ const Models = () => {
             checked={formValues.switchField}
             onChange={handleSwitchChange}
           />
-        </Form.Item>
+        </Form.Item> */}
         <Form.Item>
           <Button type="secondary" onClick={resetForm}>
             Reset

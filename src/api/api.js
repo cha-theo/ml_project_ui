@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const makeModelsPost = async (postData) => {
-  const res = await axios.post("http://127.0.0.1:5001/emp/api/v1/stats/foo", postData);
+  const res = await axios.post("http://127.0.0.1:5001/emp/api/v1/models/", postData);
   const data = await res.data;
 
   return data;
