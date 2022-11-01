@@ -31,7 +31,7 @@ const formValuesInitialState = {
   instant_bookable: "",
   bathroom: "",
   bathroom_type_private: "",
-  amenities: "",
+  amenities: "amenities_low",
   neighbourhood: "neighbourhood_cleansed_1Ο ΝΕΚΡΟΤΑΦΕΙΟ",
   room_type: "room_type_Private room",
   // textField: "",
@@ -51,6 +51,24 @@ const Models = () => {
   const [formValues, setFormValues] = useState(formValuesInitialState);
   const [models, setModels] = useState(null);
 
+const is_disabled =  !formValues.host_listings_count ||
+!formValues.host_identity_verified ||
+!formValues.host_is_superhost ||
+!formValues.accommodates ||
+!formValues.beds ||
+!formValues.minimum_nights ||
+!formValues.maximum_nights ||
+!formValues.availability_365 ||
+!formValues.number_of_reviews ||
+!formValues.reviews_per_month ||
+!formValues.instant_bookable ||
+!formValues.bathroom ||
+!formValues.neighbourhood ||
+!formValues.room_type ||
+!formValues.amenities ||
+!formValues.bathroom_type_private
+
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     // console.log(name, value); // Uncomment to view name/value pair
@@ -61,6 +79,9 @@ const Models = () => {
   };
   const handleRoomType = (value) => {
     setFormValues({ ...formValues, room_type: value });
+  };
+  const handleAmenities = (value) => {
+    setFormValues({ ...formValues, amenities: value });
   };
   const handleMultipleSelectChange = (value) => {
     setFormValues({ ...formValues, multiplSelectField: value });
@@ -222,15 +243,6 @@ const Models = () => {
             </Radio.Group>
           </Form.Item>
 
-          <Form.Item label="How many amenities has the property?">
-            <Input
-              type="number"
-              placeholder="Insert the number amenities"
-              name="amenities"
-              value={formValues.amenities}
-              onChange={handleInputChange}
-            />
-          </Form.Item>
 
           <Form.Item label="In which neighbourhood is the property located">
             <Select
@@ -289,6 +301,19 @@ const Models = () => {
               <Option value="neighbourhood_cleansed_ΣΕΠΟΛΙΑ">Sepolia</Option>
               <Option value="neighbourhood_cleansed_ΣΤΑΔΙΟ">Stadio</Option>
               <Option value="neighbourhood_cleansed_ΣΤΑΘΜΟΣ ΛΑΡΙΣΗΣ">Larisis Station</Option>
+            </Select>
+          </Form.Item>
+
+          <Form.Item label="Select amenities number">
+            <Select
+              name="amenities"
+              defaultValue=""
+              value={formValues.amenities}
+              onChange={handleAmenities}
+            >
+              <Option value="amenities_low">Number of amenities less 27</Option>
+              <Option value="amenities_medium">Number of amenities 27-34</Option>
+              <Option value="amenities_high">Number of amenities more 34</Option>
             </Select>
           </Form.Item>
 
@@ -415,24 +440,7 @@ const Models = () => {
             </Button>
             &nbsp;
             <Button
-              disabled={
-                !formValues.host_listings_count ||
-                !formValues.host_identity_verified ||
-                !formValues.host_is_superhost ||
-                !formValues.accommodates ||
-                !formValues.beds ||
-                !formValues.minimum_nights ||
-                !formValues.maximum_nights ||
-                !formValues.availability_365 ||
-                !formValues.number_of_reviews ||
-                !formValues.reviews_per_month ||
-                !formValues.instant_bookable ||
-                !formValues.bathroom ||
-                !formValues.neighbourhood ||
-                !formValues.room_type ||
-                !formValues.amenities ||
-                !formValues.bathroom_type_private
-              }
+              disabled={is_disabled}
               type="primary"
               onClick={handleFormSubmit}
             >
