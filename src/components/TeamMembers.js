@@ -1,11 +1,4 @@
-import {
-  Typography,
-  Divider,
-  Avatar,
-  Card,
-  Col,
-  List
-} from "antd";
+import { Typography, Divider, Avatar, Card, Col, List } from "antd";
 import {
   FacebookOutlined,
   GithubOutlined,
@@ -22,106 +15,38 @@ const TeamMembers = () => (
     <Col xs={{ span: 24 }} lg={{ span: 3 }}>
       <Title>Our Team</Title>
     </Col>
-    <Col className="gutter-row" xs={{ span: 12 }} lg={{ span: 5 }}>
-      <Card
-        // style={{ width: 300 }}
-        cover={
-          <img
-            alt="example"
-            src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-          />
-        }
-        actions={[
-          <FacebookOutlined key="facebook" />,
-          <GithubOutlined key="github" />,
-          <LinkedinOutlined key="linkedin" />,
-        ]}
-      >
-        <Meta
-          avatar={
-            <Avatar src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />
-          }
-          title="Card title"
-          description="This is the description"
-        />
-      </Card>
-    </Col>
-    <Col className="gutter-row" xs={{ span: 12 }} lg={{ span: 5 }}>
-      <Card
-        // style={{ width: 300 }}
-        cover={
-          <img
-            alt="example"
-            src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-          />
-        }
-        actions={[
-          <FacebookOutlined key="facebook" />,
-          <GithubOutlined key="github" />,
-          <LinkedinOutlined key="linkedin" />,
-        ]}
-      >
-        <Meta
-          avatar={
-            <Avatar src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />
-          }
-          title="Card title"
-          description="This is the description"
-        />
-      </Card>
-    </Col>
-    <Col className="gutter-row" xs={{ span: 12 }} lg={{ span: 5 }}>
-      <Card
-        // style={{ width: 300 }}
-        cover={
-          <img
-            alt="example"
-            src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-          />
-        }
-        actions={[
-          <FacebookOutlined key="facebook" />,
-          <GithubOutlined key="github" />,
-          <LinkedinOutlined key="linkedin" />,
-        ]}
-      >
-        <Meta
-          avatar={
-            <Avatar src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />
-          }
-          title="Card title"
-          description="This is the description"
-        />
-      </Card>
-    </Col>
-    <Col className="gutter-row" xs={{ span: 12 }} lg={{ span: 5 }}>
-      <Card
-        // style={{ width: 300 }}
-        cover={
-          <img
-            alt="example"
-            src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-          />
-        }
-        actions={[
-          <FacebookOutlined key="facebook" />,
-          <GithubOutlined key="github" />,
-          <LinkedinOutlined key="linkedin" />,
-        ]}
-      >
-        <Meta
-          avatar={
-            <Avatar src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />
-          }
-          title="Card title"
-          description="This is the description"
-        />
-      </Card>
-    </Col>
 
+    {team.map((person) => {
+      return (
+        <Col className="gutter-row" xs={{ span: 12 }} lg={{ span: 5 }}>
+          <Card
+            style={{ width: 250 }}
+            cover={<img alt={person.name} src={person.image} />}
+            actions={[
+              <FacebookOutlined key="facebook" />,
+              <GithubOutlined key="github" />,
+              <LinkedinOutlined key="linkedin" />,
+            ]}
+          >
+            <Meta title={person.name} description={person.description} />
+          </Card>
+        </Col>
+      );
+    })}
 
-
-    
+{/* {team.map((person) => {
+      return (
+        <Col className="gutter-row" xs={{ span: 12 }} lg={{ span: 5 }}>
+<Card
+    hoverable
+    style={{ width: 240 }}
+    cover={<img alt="example" src={person.image} />}
+  >
+    <Meta title="Europe Street beat" description="www.instagram.com" />
+  </Card>
+  </Col>
+  );
+})} */}
 
     {/* <List
       size="large"
@@ -138,9 +63,6 @@ const TeamMembers = () => (
         </List.Item>
       )}
     /> */}
-
-
-
   </>
 );
 

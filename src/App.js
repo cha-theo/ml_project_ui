@@ -7,21 +7,24 @@ import Stats from "./components/Stats";
 import NotFound from "./components/NotFound";
 import Home from "./components/Home"
 
+
 const { Content } = Layout;
 
 const App = () => (
   <Router>
     <Layout className="layout">
       <AppHeader />
+      
       <Content className="main-container">
-        <div className="content">
+        
+        
           <Routes>
             <Route path="/models" element={<Models />} />
             <Route path="/stats" element={<Stats />} />
             <Route path="/" element={<Home />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </div>
+      
       </Content>
       <AppFooter />
     </Layout>

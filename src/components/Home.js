@@ -5,6 +5,8 @@ import Intro from "./Intro";
 import { Typography, Divider, Row, Col } from "antd";
 import { getTestStats } from "../api/api";
 import { useState, useEffect } from "react";
+import Banner from "./Banner";
+
 const { Title } = Typography;
 
 
@@ -21,10 +23,15 @@ console.log(testStatsData)
 
   return (
     <>
+    <Banner />
+    <div className="content">
+    <div className="home-page">
       <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
         <Intro />
         <TeamMembers />
       </Row>
+      </div>
+      </div>
     </>
   );
 }

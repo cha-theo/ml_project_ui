@@ -1,5 +1,5 @@
 body {
-  background: #f0f2f5;
+  background: #fff;
 }
 
 .ant-layout-header {
@@ -16,7 +16,8 @@ body {
 .main-container {
   display: flex;
   flex-direction: column;
-  margin: 2rem 0;
+  margin: 0 0;
+  background-color: #fff;
 }
 
 .content {
@@ -50,4 +51,46 @@ body {
   justify-content: center;
   align-items: center;
   margin: 3rem 3rem 1rem;
+}
+
+
+.ant-layout-footer{
+  background-color: #011529e0;
+  color:#fff
+}
+
+
+.main-banner{
+  background-image: url("https://i.ibb.co/phtXBVx/25550.jpg");
+  height: 700px;
+  background-size: cover;
+}
+
+.main-banner h1{
+  font-size: 70px;
+  color:#fff;
+  text-align: center;
+}
+
+.main-banner h4{
+  font-size: 18px;
+  color:#fff;
+  text-align: center;
+}
+
+.button_section{
+  text-align: center;
+  padding: 50px 0px 100px 0px;
+}
+
+#root > section > main > div.ant-row.ant-row-center.ant-row-middle.main-banner > div > div.ant-col.ant-col-24.button_section > a.ant-btn.ant-btn-round.ant-btn-primary.ant-btn-lg{
+  margin-right: 20px;
+}
+
+.ant-menu-dark .ant-menu-item, .ant-menu-dark .ant-menu-item-group-title, .ant-menu-dark .ant-menu-item>a, .ant-menu-dark .ant-menu-item>span>a {
+  color: #fff}
+
+.image_banner{
+  text-align: center;
+  margin-bottom: 40px;
 }

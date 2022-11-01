@@ -83,6 +83,7 @@ const Models = () => {
   };
 
   return (
+    <div className="content">
     <div className="stats_page">
       <Card>
         <Title>Models form</Title>
@@ -449,6 +450,7 @@ const Models = () => {
           </div>
         )}
       </Card>
+    </div>
     </div>
   );
 };

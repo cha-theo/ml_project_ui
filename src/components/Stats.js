@@ -48,6 +48,7 @@ const Stats = () => {
   };
 
   return (
+    <div className="content">
     <div className="stats_page">
       <Title>Stats page</Title>
       <Divider />
@@ -304,6 +305,7 @@ const Stats = () => {
           <Spin size="large" />
         </div>
       )}
+    </div>
     </div>
   );
 };
