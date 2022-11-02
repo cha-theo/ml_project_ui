@@ -23,6 +23,9 @@ import {
   PolarRadiusAxis,
   RadialBarChart,
   RadialBar,
+  ScatterChart,
+  ZAxis,
+  Scatter,
 } from "recharts";
 import { getStats, getTestStats } from "../api/api";
 import test_data from "../data/test_bar_data";
@@ -41,20 +44,72 @@ const Stats = () => {
   }, []);
 
   const style = {
-    top: '50%',
+    top: "50%",
     right: 0,
-    transform: 'translate(0, -50%)',
-    lineHeight: '24px',
+    transform: "translate(0, -50%)",
+    lineHeight: "24px",
   };
 
   return (
     <div className="content">
-    <div className="stats_page">
-      <Title>Stats page</Title>
-      <Divider />
-      {statsData ? (
-        <>
-          {/* <Row className="row" gutter={[24, 24]}>
+      <div className="stats_page">
+        <Title>Stats page</Title>
+        <Divider />
+        {statsData ? (
+          <>
+            <Row className="row" gutter={[24, 24]}>
+              <Col style={{ width: "100%" }}>
+                <div className="chart-container">
+                  <Title level={4}>My super line chart</Title>
+                  <div className="chart-inner">
+                    <ResponsiveContainer>
+                      <ScatterChart
+                        width={400}
+                        height={400}
+                        margin={{
+                          top: 20,
+                          right: 20,
+                          bottom: 20,
+                          left: 20,
+                        }}
+                      >
+                        <CartesianGrid />
+                        <XAxis dataKey="x" type="number" name="Longitude" domain={[23.7, 23.72]}/>
+                        <YAxis dataKey="y" type="number" name="Latitude " domain={[37.95, 37.99]}/>
+                        <ZAxis />
+                        <Tooltip cursor={{ strokeDasharray: "3 3" }} />
+                        <Legend />
+                        <Scatter
+                          name="Acropolis"
+                          legendType="star"
+                          data={statsData.acr}
+                          shape="star"
+                          fill="#008000"
+                        />
+                        <Scatter
+                          name="Neighborhood 1"
+                          data={statsData.neig1}
+                          fill="#8884d8"
+                        />
+                        <Scatter
+                          name="Neighborhood 2"
+                          data={statsData.neig2}
+                          fill="#ffba9a"
+                        />
+                        <Scatter
+                          name="Neighborhood 3"
+                          data={statsData.neig3}
+                          fill="#f3ca4d"
+                        />
+                        
+                      </ScatterChart>
+                    </ResponsiveContainer>
+                  </div>
+                </div>
+              </Col>
+            </Row>
+            {/* 
+            <Row className="row" gutter={[24, 24]}>
             <Col style={{ width: "100%" }}>
               <div className="chart-container">
                 <Title level={4}>My super line chart</Title>
@@ -133,98 +188,98 @@ const Stats = () => {
               </div>
             </Col>
           </Row> */}
-          <Row className="row" gutter={[24, 24]}>
-            <Col sm={{ span: 24 }} lg={{ span: 12 }}>
-              <div className="chart-container">
-                <Title level={4}>Mean/Max price per room type</Title>
-                <div className="chart-inner">
-                  <ResponsiveContainer>
-                    <BarChart
-                      data={statsData.barChart}
-                      margin={{
-                        top: 5,
-                        right: 30,
-                        left: 20,
-                        bottom: 5,
-                      }}
-                    >
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis dataKey="name" />
-                      <YAxis />
-                      <Tooltip />
-                      <Legend />
-                      <Bar dataKey="mean price" fill="#8884d8" />
-                      <Bar dataKey="max price" fill="#82ca9d" />
-                    </BarChart>
-                  </ResponsiveContainer>
+            <Row className="row" gutter={[24, 24]}>
+              <Col sm={{ span: 24 }} lg={{ span: 12 }}>
+                <div className="chart-container">
+                  <Title level={4}>Mean/Max price per room type</Title>
+                  <div className="chart-inner">
+                    <ResponsiveContainer>
+                      <BarChart
+                        data={statsData.barChart}
+                        margin={{
+                          top: 5,
+                          right: 30,
+                          left: 20,
+                          bottom: 5,
+                        }}
+                      >
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="name" />
+                        <YAxis />
+                        <Tooltip />
+                        <Legend />
+                        <Bar dataKey="mean price" fill="#8884d8" />
+                        <Bar dataKey="max price" fill="#82ca9d" />
+                      </BarChart>
+                    </ResponsiveContainer>
+                  </div>
                 </div>
-              </div>
-            </Col>
+              </Col>
 
-            <Col sm={{ span: 24 }} lg={{ span: 12 }}>
-              <div className="chart-container">
-                <Title level={4}>My super pie chart</Title>
-                <div className="chart-inner">
-                  <ResponsiveContainer>
-                    <RadarChart
-                      cx="50%"
-                      cy="50%"
-                      outerRadius="80%"
-                      data={statsData.radarChart}
-                    >
-                      <PolarGrid />
-                      <PolarAngleAxis dataKey="name" />
-                      <PolarRadiusAxis />
-                      <Radar
-                        name="Mike"
-                        dataKey="frequency"
-                        stroke="#8884d8"
-                        fill="#8884d8"
-                        fillOpacity={0.6}
-                      />
-                    </RadarChart>
-                  </ResponsiveContainer>
+              <Col sm={{ span: 24 }} lg={{ span: 12 }}>
+                <div className="chart-container">
+                  <Title level={4}>My super pie chart</Title>
+                  <div className="chart-inner">
+                    <ResponsiveContainer>
+                      <RadarChart
+                        cx="50%"
+                        cy="50%"
+                        outerRadius="80%"
+                        data={statsData.radarChart}
+                      >
+                        <PolarGrid />
+                        <PolarAngleAxis dataKey="name" />
+                        <PolarRadiusAxis />
+                        <Radar
+                          name="Mike"
+                          dataKey="frequency"
+                          stroke="#8884d8"
+                          fill="#8884d8"
+                          fillOpacity={0.6}
+                        />
+                      </RadarChart>
+                    </ResponsiveContainer>
+                  </div>
                 </div>
-              </div>
-            </Col>
-          </Row>
+              </Col>
+            </Row>
 
-          <Row className="row" gutter={[24, 24]}>
-            <Col sm={{ span: 24 }} lg={{ span: 12 }}>
-              <div className="chart-container">
-                <Title level={4}>Mean/Max price per room type</Title>
-                <div className="chart-inner">
-                  <ResponsiveContainer>
-                    <RadialBarChart
-                      cx="50%"
-                      cy="50%"
-                      innerRadius="10%"
-                      outerRadius="80%"
-                      barSize={20}
-                      data={statsData.radialBarChart}
-                    >
-                      <RadialBar
-                        minAngle={15}
-                        label={{ position: "insideStart", fill: "#000" }}
-                        background
-                        clockWise
-                        dataKey="uv"
-                      />
-                      <Legend
-                        iconSize={10}
-                        layout="vertical"
-                        verticalAlign="middle"
-                        wrapperStyle={style}
-                      />
-                    </RadialBarChart>
-                  </ResponsiveContainer>
+            <Row className="row" gutter={[24, 24]}>
+              <Col sm={{ span: 24 }} lg={{ span: 12 }}>
+                <div className="chart-container">
+                  <Title level={4}>Mean/Max price per room type</Title>
+                  <div className="chart-inner">
+                    <ResponsiveContainer>
+                      <RadialBarChart
+                        cx="50%"
+                        cy="50%"
+                        innerRadius="10%"
+                        outerRadius="80%"
+                        barSize={20}
+                        data={statsData.radialBarChart}
+                      >
+                        <RadialBar
+                          minAngle={15}
+                          label={{ position: "insideStart", fill: "#000" }}
+                          background
+                          clockWise
+                          dataKey="uv"
+                        />
+                        <Legend
+                          iconSize={10}
+                          layout="vertical"
+                          verticalAlign="middle"
+                          wrapperStyle={style}
+                        />
+                      </RadialBarChart>
+                    </ResponsiveContainer>
+                  </div>
                 </div>
-              </div>
-            </Col>
-                  To fill 
-            <Col sm={{ span: 24 }} lg={{ span: 12 }}></Col>
-          </Row>
-          {/* <PieChart>
+              </Col>
+              To fill
+              <Col sm={{ span: 24 }} lg={{ span: 12 }}></Col>
+            </Row>
+            {/* <PieChart>
                       <Pie
                         data={statsData.pieChart}
                         dataKey="value"
@@ -245,7 +300,7 @@ const Stats = () => {
             </Col>
             */}
 
-          {/* <Col sm={{ span: 24 }} lg={{ span: 12 }}>
+            {/* <Col sm={{ span: 24 }} lg={{ span: 12 }}>
               <div className="chart-container">
                 <Title level={4}>My super pie chart</Title>
                 <div className="chart-inner">
@@ -271,7 +326,7 @@ const Stats = () => {
             </Col> 
           </Row>
           */}
-          {/* <Row className="row" gutter={[24, 24]}>
+            {/* <Row className="row" gutter={[24, 24]}>
             <Col style={{ width: "100%" }}>
               <div className="chart-container">
                 <Title level={4}>My test bar chart</Title>
@@ -299,13 +354,13 @@ const Stats = () => {
               </div>
             </Col>
           </Row> */}
-        </>
-      ) : (
-        <div className="stats-loader">
-          <Spin size="large" />
-        </div>
-      )}
-    </div>
+          </>
+        ) : (
+          <div className="stats-loader">
+            <Spin size="large" />
+          </div>
+        )}
+      </div>
     </div>
   );
 };
