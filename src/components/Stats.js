@@ -26,6 +26,7 @@ import {
   ScatterChart,
   ZAxis,
   Scatter,
+
 } from "recharts";
 import { getStats, getTestStats } from "../api/api";
 import test_data from "../data/test_bar_data";
@@ -50,6 +51,8 @@ const Stats = () => {
     lineHeight: "24px",
   };
 
+  const toEuro = (decimal, fixed = 0) => `${(decimal)}€`;
+
   return (
     <div className="content">
       <div className="stats_page">
@@ -60,7 +63,7 @@ const Stats = () => {
             <Row className="row" gutter={[24, 24]}>
               <Col style={{ width: "100%" }}>
                 <div className="chart-container">
-                  <Title level={4}>My super line chart</Title>
+                  <Title level={4}>Top3 most expensive neighborhood relative to Acropolis</Title>
                   <div className="chart-inner">
                     <ResponsiveContainer>
                       <ScatterChart
@@ -74,8 +77,18 @@ const Stats = () => {
                         }}
                       >
                         <CartesianGrid />
-                        <XAxis dataKey="x" type="number" name="Longitude" domain={[23.7, 23.72]}/>
-                        <YAxis dataKey="y" type="number" name="Latitude " domain={[37.95, 37.99]}/>
+                        <XAxis
+                          dataKey="x"
+                          type="number"
+                          name="Longitude"
+                          domain={[23.7, 23.781]}
+                        />
+                        <YAxis
+                          dataKey="y"
+                          type="number"
+                          name="Latitude "
+                          domain={[37.95, 38.032]}
+                        />
                         <ZAxis />
                         <Tooltip cursor={{ strokeDasharray: "3 3" }} />
                         <Legend />
@@ -101,7 +114,6 @@ const Stats = () => {
                           data={statsData.neig3}
                           fill="#f3ca4d"
                         />
-                        
                       </ScatterChart>
                     </ResponsiveContainer>
                   </div>
@@ -205,7 +217,7 @@ const Stats = () => {
                       >
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis dataKey="name" />
-                        <YAxis />
+                        <YAxis tickFormatter={toEuro} />
                         <Tooltip />
                         <Legend />
                         <Bar dataKey="mean price" fill="#8884d8" />
@@ -218,9 +230,9 @@ const Stats = () => {
 
               <Col sm={{ span: 24 }} lg={{ span: 12 }}>
                 <div className="chart-container">
-                  <Title level={4}>My super pie chart</Title>
+                  <Title level={4}>Top5 amenities</Title>
                   <div className="chart-inner">
-                    <ResponsiveContainer>
+                    <ResponsiveContainer width={600}>
                       <RadarChart
                         cx="50%"
                         cy="50%"
@@ -247,7 +259,7 @@ const Stats = () => {
             <Row className="row" gutter={[24, 24]}>
               <Col sm={{ span: 24 }} lg={{ span: 12 }}>
                 <div className="chart-container">
-                  <Title level={4}>Mean/Max price per room type</Title>
+                  <Title level={4}>Room type percentage</Title>
                   <div className="chart-inner">
                     <ResponsiveContainer>
                       <RadialBarChart
@@ -276,8 +288,41 @@ const Stats = () => {
                   </div>
                 </div>
               </Col>
-              To fill
-              <Col sm={{ span: 24 }} lg={{ span: 12 }}></Col>
+
+              <Col sm={{ span: 24 }} lg={{ span: 12 }}>
+                <div className="chart-container">
+                  <Title level={4}>Registered hosts per year</Title>
+                  <div className="chart-inner">
+                    <ResponsiveContainer>
+                      <LineChart
+                        width={500}
+                        height={300}
+                        data={statsData.lineChart}
+                        margin={{
+                          top: 5,
+                          right: 30,
+                          left: 20,
+                          bottom: 5,
+                        }}
+                      >
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="year"  
+                          name="Year"/>
+                        <YAxis dataKey="new_users" />
+                        <Tooltip />
+                        <Legend />
+                        <Line
+                          type="monotone"
+                          dataKey="new_users"
+                          stroke="#8884d8"
+                          name="New Hosts"
+                          activeDot={{ r: 8 }}
+                        />
+                      </LineChart>
+                    </ResponsiveContainer>
+                  </div>
+                </div>
+              </Col>
             </Row>
             {/* <PieChart>
                       <Pie
