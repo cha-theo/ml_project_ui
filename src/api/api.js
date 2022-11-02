@@ -18,7 +18,7 @@ export const getStats = async () => {
 
 // test connection
 export const getTestStats = async () => {
-  const res = await axios("http://127.0.0.1:5001/bnb/api/v1/stats/max_id");
+  const res = await axios("http://127.0.0.1:5001/bnb/api/v1/stats/");
   const data = await res.data;
 
   return data;

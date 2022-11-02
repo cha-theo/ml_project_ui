@@ -1,4 +1,4 @@
-import { Typography, Divider, Avatar, Card, Col, List } from "antd";
+import { Typography, Divider, Avatar, Card, Col, List, Button } from "antd";
 import {
   FacebookOutlined,
   GithubOutlined,
@@ -6,6 +6,7 @@ import {
 } from "@ant-design/icons";
 
 import team from "../data/teamMembers";
+
 const { Meta } = Card;
 const { Title } = Typography;
 
@@ -22,10 +23,9 @@ const TeamMembers = () => (
           <Card
             style={{ width: 250 }}
             cover={<img alt={person.name} src={person.image} />}
+            
             actions={[
-              <FacebookOutlined key="facebook" />,
-              <GithubOutlined key="github" />,
-              <LinkedinOutlined key="linkedin" />,
+              <Button href={person.linkedin} target="_blank" icon={<LinkedinOutlined/>}/>
             ]}
           >
             <Meta title={person.name} description={person.description} />

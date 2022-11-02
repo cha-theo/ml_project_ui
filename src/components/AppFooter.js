@@ -4,11 +4,11 @@ const { Footer } = Layout;
 
 const AppFooter = () => (
   <Footer className="align-center">
-    Made with{" "}
+    Developed with{" "}
     <span role="img" aria-label="love">
       ❤️
     </span>{" "}
-    in Greece. </Footer>
+    by Team5™ - 2022  </Footer>
 );
 
 export default AppFooter;

@@ -6,12 +6,11 @@ import { Typography, Divider, Row, Col } from "antd";
 import { getTestStats } from "../api/api";
 import { useState, useEffect } from "react";
 import Banner from "./Banner";
+import MoodChart from "./MoodChart";
 
 const { Title } = Typography;
 
-
 function Home() {
-
   const [testStatsData, setTestStatsData] = useState(null);
 
   useEffect(() => {
@@ -19,18 +18,19 @@ function Home() {
       setTestStatsData(data);
     });
   }, []);
-console.log(testStatsData)
+  console.log(testStatsData);
 
   return (
     <>
-    <Banner />
-    <div className="content">
-    <div className="home-page">
-      <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-        <Intro />
-        <TeamMembers />
-      </Row>
-      </div>
+      <Banner />
+      <div className="content">
+        <div className="home-page">
+          <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+            <Intro />
+            <MoodChart />
+            <TeamMembers />
+          </Row>
+        </div>
       </div>
     </>
   );

@@ -10,6 +10,7 @@ function Banner() {
       <Row>
         <Col span={24} className="image_banner">
           <img
+            alt="team5-logo"
             style={{ width: "300px" }}
             src="https://i.ibb.co/7jQx5dn/Capture-removebg-preview.png"
           ></img>
@@ -29,7 +30,7 @@ function Banner() {
             href="/models"
             icon={<CalculatorOutlined />}
           >
-            Calculator
+            Price Calculator
           </Button>
           <Button
             size="large"

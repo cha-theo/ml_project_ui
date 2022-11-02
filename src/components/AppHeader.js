@@ -41,7 +41,7 @@ const AppHeader = () => {
           items={menuItems}
         />
         
-          <img src="https://i.ibb.co/ZJ4ffdD/Code-Hub-logo-Full-e1515417616834-1.png" width={120} height={27}></img>
+          <img src="https://iA.ibb.co/dkxtCPQ/Code-Hub.png" width={275} height={40}></img>
         
       </Header>
     </>

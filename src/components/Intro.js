@@ -11,30 +11,37 @@ function Intro() {
           <Title>Introduction</Title>
           <Col>
             <Paragraph>
-              In the process of internal desktop applications development, many
-              different design specs and implementations would be involved,
-              which might cause designers and developers difficulties and
-              duplication and reduce the efficiency of development. In the
-              process of internal desktop applications development, many
-              different design specs and implementations would be involved,
-              which might cause designers and developers difficulties and
-              duplication and reduce the efficiency of development.
+              This group project aims at encouraging students to apply the
+              knowledge and experience learned in the class towards a real-life
+              business intelligence system.
             </Paragraph>
           </Col>
           <Col>
             <Paragraph>
-              In the process of internal desktop applications development, many
-              different design specs and implementations would be involved,
-              which might cause designers and developers difficulties and
-              duplication and reduce the efficiency of development.
+              You are employed as a Data Scientist at Airbnb, a company that is
+              involved in short-term rentals. Airbnb wants to create a service
+              for hosts with top-rated undervalued listings that will suggest
+              they increase their prices. Your team is tasked with building a
+              POC for this service. You have to (a) create and train a model
+              that will predict the price of a listing, given its attributes,
+              (b) deploy the model as an API, and (c) implement a web-based
+              user-interface (UI).
             </Paragraph>
           </Col>
           <Col>
             <Paragraph>
-              In the process of internal desktop applications development, many
-              different design specs and implementations would be involved,
-              which might cause designers and developers difficulties and
-              duplication and reduce the efficiency of development.
+              In terms of data content, you are provided with Airbnb data for
+              the region of Athens, where the POC will take place. The data
+              includes information about the listings (neighborhood, amenities,
+              bedrooms, and bathrooms, etc.) and ratings for those listings.
+            </Paragraph>
+          </Col>
+          <Col>
+            <Paragraph>
+              Your project will focus on the above three tasks. The steps you
+              should follow regarding the data flow, the modelling process and
+              the resource management are up to you. Your code needs to be well
+              documented and organized.
             </Paragraph>
           </Col>
         </Typography>
@@ -44,14 +51,16 @@ function Intro() {
           <Title>Methodology</Title>
           <Col>
             <Paragraph>
-              In the process of internal desktop applications development, many
-              different design specs and implementations would be involved,
-              which might cause designers and developers difficulties and
-              duplication and reduce the efficiency of development. In the
-              process of internal desktop applications development, many
-              different design specs and implementations would be involved,
-              which might cause designers and developers difficulties and
-              duplication and reduce the efficiency of development.
+              Initially, we explored the nature of the datasets. More
+              specifically, we examined the columns where missing values are
+              present and replaced with meaningful ones. Additionally, we
+              searched for duplicated rows so that we remove them. Luckily,
+              there were none. Afterwards, we looked for statistical insights
+              and correlations among the features. Regarding the data
+              preparation for model training, we scaled and standardized our
+              data so that none of them influences the prediction more than the
+              rest. Then, we trained and tested 4 models, which then, were
+              fine-tuned for error minimization.
             </Paragraph>
           </Col>
           <Row justify="center">
@@ -68,21 +77,24 @@ function Intro() {
               />
             </Col>
           </Row>
+        </Typography>
+      </Col>
 
+      <Col>
+        <Typography>
+          <Title>Conclusions</Title>
           <Col>
             <Paragraph>
-              In the process of internal desktop applications development, many
-              different design specs and implementations would be involved,
-              which might cause designers and developers difficulties and
-              duplication and reduce the efficiency of development.
-            </Paragraph>
-          </Col>
-          <Col>
-            <Paragraph>
-              In the process of internal desktop applications development, many
-              different design specs and implementations would be involved,
-              which might cause designers and developers difficulties and
-              duplication and reduce the efficiency of development.
+              Initially, we explored the nature of the datasets. More
+              specifically, we examined the columns where missing values are
+              present and replaced with meaningful ones. Additionally, we
+              searched for duplicated rows so that we remove them. Luckily,
+              there were none. Afterwards, we looked for statistical insights
+              and correlations among the features. Regarding the data
+              preparation for model training, we scaled and standardized our
+              data so that none of them influences the prediction more than the
+              rest. Then, we trained and tested 4 models, which then, were
+              fine-tuned for error minimization.
             </Paragraph>
           </Col>
         </Typography>

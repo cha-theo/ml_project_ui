@@ -61,7 +61,7 @@ body {
 
 
 .main-banner{
-  background-image: url("https://i.ibb.co/phtXBVx/25550.jpg");
+  background-image: url("https://i.ibb.co/1TrWhWB/25550-min.jpg");
   height: 700px;
   background-size: cover;
 }
@@ -94,3 +94,10 @@ body {
   text-align: center;
   margin-bottom: 40px;
 }
+
+
+.main_image_conclusions{
+  text-align: center;
+}
+
+
