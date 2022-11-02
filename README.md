@@ -28,3 +28,11 @@ open http://localhost:3000
 - You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 - To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Screenshots
+
+![Home](home.png)
+
+![Form](form.png)
+
+![Recharts](recharts.png)
