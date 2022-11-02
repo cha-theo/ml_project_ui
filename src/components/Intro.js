@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography, Col, Image, Row } from "antd";
 
-const { Title, Paragraph, Text } = Typography;
+const { Title, Paragraph } = Typography;
 
 function Intro() {
   return (
@@ -53,50 +53,33 @@ function Intro() {
             <Paragraph>
               Initially, we explored the nature of the datasets. More
               specifically, we examined the columns where missing values are
-              present and replaced with meaningful ones. Additionally, we
-              searched for duplicated rows so that we remove them. Luckily,
-              there were none. Afterwards, we looked for statistical insights
-              and correlations among the features. Regarding the data
-              preparation for model training, we scaled and standardized our
-              data so that none of them influences the prediction more than the
-              rest. Then, we trained and tested 4 models, which then, were
-              fine-tuned for error minimization.
+              present and replaced with meaningful ones.
+            </Paragraph>
+            <Paragraph>
+              {" "}
+              Additionally, we searched for duplicated rows so that we remove
+              them. Luckily, there were none.{" "}
+            </Paragraph>
+            <Paragraph>
+              Afterwards, we looked for statistical insights and correlations
+              among the features. Regarding the data preparation for model
+              training, we scaled and standardized our data so that none of them
+              influences the prediction more than the rest. Then, we trained and
+              tested 4 models, which then, were fine-tuned for error
+              minimization.
             </Paragraph>
           </Col>
           <Row justify="center">
             <Col span={12}>
-              <Image
-                width={800}
-                src="https://reshamas.github.io/assets/images/chart.png"
-              />
+              <Image width={800} src="https://i.ibb.co/qCcmCmN/corr.png" />
             </Col>
             <Col span={12}>
               <Image
                 width={800}
-                src="https://reshamas.github.io/assets/images/chart.png"
+                src="https://i.ibb.co/rGS3Nj9/Microsoft-Teams-image.png"
               />
             </Col>
           </Row>
-        </Typography>
-      </Col>
-
-      <Col>
-        <Typography>
-          <Title>Conclusions</Title>
-          <Col>
-            <Paragraph>
-              Initially, we explored the nature of the datasets. More
-              specifically, we examined the columns where missing values are
-              present and replaced with meaningful ones. Additionally, we
-              searched for duplicated rows so that we remove them. Luckily,
-              there were none. Afterwards, we looked for statistical insights
-              and correlations among the features. Regarding the data
-              preparation for model training, we scaled and standardized our
-              data so that none of them influences the prediction more than the
-              rest. Then, we trained and tested 4 models, which then, were
-              fine-tuned for error minimization.
-            </Paragraph>
-          </Col>
         </Typography>
       </Col>
     </>

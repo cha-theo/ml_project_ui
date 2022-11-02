@@ -1,9 +1,5 @@
-import { Typography, Divider, Avatar, Card, Col, List, Button } from "antd";
-import {
-  FacebookOutlined,
-  GithubOutlined,
-  LinkedinOutlined,
-} from "@ant-design/icons";
+import { Typography, Divider, Card, Col, Button } from "antd";
+import { LinkedinOutlined } from "@ant-design/icons";
 
 import team from "../data/teamMembers";
 
@@ -23,9 +19,12 @@ const TeamMembers = () => (
           <Card
             style={{ width: 250 }}
             cover={<img alt={person.name} src={person.image} />}
-            
             actions={[
-              <Button href={person.linkedin} target="_blank" icon={<LinkedinOutlined/>}/>
+              <Button
+                href={person.linkedin}
+                target="_blank"
+                icon={<LinkedinOutlined />}
+              />,
             ]}
           >
             <Meta title={person.name} description={person.description} />
@@ -33,36 +32,6 @@ const TeamMembers = () => (
         </Col>
       );
     })}
-
-{/* {team.map((person) => {
-      return (
-        <Col className="gutter-row" xs={{ span: 12 }} lg={{ span: 5 }}>
-<Card
-    hoverable
-    style={{ width: 240 }}
-    cover={<img alt="example" src={person.image} />}
-  >
-    <Meta title="Europe Street beat" description="www.instagram.com" />
-  </Card>
-  </Col>
-  );
-})} */}
-
-    {/* <List
-      size="large"
-      bordered
-      dataSource={team}
-      renderItem={({ name, image, description }) => (
-        
-        <List.Item>
-          <List.Item.Meta
-            avatar={<Avatar size={45} src={image} />}
-            title={name}
-            description={description}
-          />
-        </List.Item>
-      )}
-    /> */}
   </>
 );
 

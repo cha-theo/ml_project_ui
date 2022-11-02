@@ -1,8 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
-import { Layout, Menu, Row, Col, Typography, Button } from "antd";
+import { Layout, Menu } from "antd";
 
-const { Header, Content } = Layout;
-const { Title } = Typography;
+const { Header } = Layout;
 
 const menuItems = [
   {
@@ -16,7 +15,7 @@ const menuItems = [
   {
     key: "raw-data",
     label: (
-      <a href="http://localhost:5001/bnb/api/v1/stats/raw_data" target="_blank">
+      <a href="http://localhost:5001/bnb/api/v1/stats/raw_data" target="_blank" rel="noreferrer">
         Raw Data
       </a>
     ),
@@ -40,9 +39,14 @@ const AppHeader = () => {
           style={{ minWidth: 0, flex: "auto" }}
           items={menuItems}
         />
-        
-          <img src="https://iA.ibb.co/dkxtCPQ/Code-Hub.png" width={275} height={40} style={{ marginTop: "12px"}}></img>
-        
+
+        <img
+          alt="pfizer_codehub_logo"
+          src="https://i.ibb.co/dkxtCPQ/Code-Hub.png"
+          width={275}
+          height={40}
+          style={{ marginTop: "12px" }}
+        ></img>
       </Header>
     </>
   );

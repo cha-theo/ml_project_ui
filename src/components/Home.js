@@ -1,14 +1,11 @@
 import React from "react";
 import TeamMembers from "./TeamMembers";
-import Progress from "./Progress";
 import Intro from "./Intro";
-import { Typography, Divider, Row, Col } from "antd";
+import { Row } from "antd";
 import { getTestStats } from "../api/api";
 import { useState, useEffect } from "react";
 import Banner from "./Banner";
 import MoodChart from "./MoodChart";
-
-const { Title } = Typography;
 
 function Home() {
   const [testStatsData, setTestStatsData] = useState(null);

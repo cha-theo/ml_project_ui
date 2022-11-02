@@ -80,12 +80,12 @@ const Models = () => {
   const handleAmenities = (value) => {
     setFormValues({ ...formValues, amenities: value });
   };
-  const handleMultipleSelectChange = (value) => {
-    setFormValues({ ...formValues, multiplSelectField: value });
-  };
-  const handleSwitchChange = (value) => {
-    setFormValues({ ...formValues, switchField: value });
-  };
+  // const handleMultipleSelectChange = (value) => {
+  //   setFormValues({ ...formValues, multiplSelectField: value });
+  // };
+  // const handleSwitchChange = (value) => {
+  //   setFormValues({ ...formValues, switchField: value });
+  // };
   const resetForm = () => {
     setFormValues(formValuesInitialState);
   };
@@ -104,7 +104,7 @@ const Models = () => {
     <div className="content">
       <div className="stats_page">
         <Card>
-          <Title>Models form</Title>
+          <Title>Model form</Title>
           <form>
             <Form.Item label="How many persons can stay?">
               <Input

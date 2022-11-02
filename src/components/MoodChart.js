@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import { Typography, Col, Row } from "antd";
+
 import {
   LineChart,
   Line,
@@ -8,7 +8,7 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer
+  ResponsiveContainer,
 } from "recharts";
 
 const data = [
@@ -83,52 +83,50 @@ const CustomizedDot: FunctionComponent<any> = (props: any) => {
 
 function MoodChart() {
   return (
-
-      <ResponsiveContainer width='100%' height={500} >
-        <LineChart
-          width={1200}
-          height={500}
-          data={data}
-          margin={{
-            top: 5,
-            right: 200,
-            left: 200,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" label="Project Weeks" height={56}/>
-          <YAxis />
-          <Tooltip />
-          <Legend align="right" verticalAlign="top" height={36}/>
-          <Line
-            type="monotone"
-            dataKey="joy"
-            stroke="#0093d0	"
-            strokeWidth={2}
-            dot={<CustomizedDot />}
-          />
-          <Line
-            type="monotone"
-            dataKey="equity"
-            stroke="#800080"
-            strokeWidth={2}
-          />
-          <Line
-            type="monotone"
-            dataKey="courage"
-            stroke="#ff9933"
-            strokeWidth={2}
-          />
-          <Line
-            type="monotone"
-            dataKey="excelence"
-            stroke="#008000"
-            strokeWidth={2}
-          />
-        </LineChart>
-        </ResponsiveContainer>
-
+    <ResponsiveContainer width="100%" height={500}>
+      <LineChart
+        width={1200}
+        height={500}
+        data={data}
+        margin={{
+          top: 5,
+          right: 200,
+          left: 200,
+          bottom: 5,
+        }}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" label="Project Weeks" height={56} />
+        <YAxis />
+        <Tooltip />
+        <Legend align="right" verticalAlign="top" height={36} />
+        <Line
+          type="monotone"
+          dataKey="joy"
+          stroke="#0093d0	"
+          strokeWidth={2}
+          dot={<CustomizedDot />}
+        />
+        <Line
+          type="monotone"
+          dataKey="equity"
+          stroke="#800080"
+          strokeWidth={2}
+        />
+        <Line
+          type="monotone"
+          dataKey="courage"
+          stroke="#ff9933"
+          strokeWidth={2}
+        />
+        <Line
+          type="monotone"
+          dataKey="excelence"
+          stroke="#008000"
+          strokeWidth={2}
+        />
+      </LineChart>
+    </ResponsiveContainer>
   );
 }
 
